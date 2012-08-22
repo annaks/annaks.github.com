@@ -1,8 +1,8 @@
 body { 
     margin: 5em 0 0 0; 
     vertical-align: middle; 
-    color: #636363;
-    font-family: 'PT Sans', sans-serif;
+    color: black;
+    font-family: 'PT Mono', sans-serif;
     margin-left: 40px;
 } 
 #content { 
@@ -30,15 +30,15 @@ a:visited {
     text-decoration:none;
 }
 a:hover {
-    color: #43A2CA;
+    color: #810F7C;
     text-decoration:none;
 }
 a.graph:hover{
-    color: #43A2CA;
+    color: #810F7C;
     text-decoration:none; 
 }
 a:active {
-    color: #43A2CA;
+    color: #810F7C;
     text-decoration:none;
 }
 
@@ -74,8 +74,11 @@ a:active {
     background-size: 920px;
 }
 .title {
-    margin: 2px 0 0 440px;
-    position: absolute;
-    text-align: right;
-    width: 480px;
+    text-align: left;
 }
+.marchingants .ft {
+    background:url(http://sunpig.com/martin/code/2010/marchingants/ants-horizontal.gif) repeat-x 0 -6px;
+    height:2px;
+    width: 414px;
+}
+
