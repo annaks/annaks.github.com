@@ -11,8 +11,7 @@ body {
     margin: 0 auto; 
 }
 h1 {
-    font-size: 2em;
-    
+    font-size: 2em;   
 }
 h2 {
     font-size: 20px;
@@ -23,6 +22,15 @@ ul {
     display: inline-block;
 }
 li {
+    margin: 0 6px 6px 0;
+    display: inline-block;
+}
+li.nav {
+    font-size: 20px;
+    margin: 0 6px 6px 0;
+    display: inline-block;
+}
+li.container {
     margin: 0 6px 6px 0;
     display: inline-block;
 }
