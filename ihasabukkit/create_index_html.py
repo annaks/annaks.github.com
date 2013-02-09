@@ -1,7 +1,7 @@
 import os
 import random
 
-header = '<!DOCTYPE html> \
+header = '<!DOCTYPE html> \n\
 <html lang="en"> \
 <meta charset="UTF-8">\
 <head> \
