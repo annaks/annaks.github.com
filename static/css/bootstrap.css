@@ -4,6 +4,7 @@ body {
     color: black;
     font-family: 'PT Mono', sans-serif;
     margin-left: 40px;
+    font-size: 16px;
 } 
 #content { 
     width: 920px; 
@@ -14,11 +15,20 @@ h1 {
     font-size: 2em;
     
 }
+ol {
+    font-size: smaller;
+}
 h2 {
     font-size: 20px;
 }
+h3 {
+    font-size: 18px;
+}
 p {
     font-size: smaller;
+}
+.shmitten {
+    font-family: 'PT Sans';
 }
 
 a:link {
