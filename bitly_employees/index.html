@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>D3 Page Template</title>
+    <link href="/bitly_employees/argh.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <div class="title">
+        <h1>bitly birthdays</h1>
+    </div>
+        
+    <script type="text/javascript">
+                
+        d3.json("data/birthday.json", function(data) {
+          console.log(data)
+        
+
+          var squareSize = 25,
+            squarePadding = 4;
+        
+          var y = d3.scale.linear()
+              .range([5, (12 * (squareSize + squarePadding)) + 5])
+              .domain([0, 12])
+
+          var x = d3.scale.linear()
+              .range([5, (31*(squareSize + squarePadding)) + 5])
+              .domain([0, 31]);
+
+          d3.select("body")
+            .append("svg")
+              .attr("width", 960)
+              .attr("height", 400)
+            .selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+              .attr("x", function(d){ return x(d.day)})
+              .attr("y", function(d){ return y(d.month)})
+              .attr("width", squareSize)
+              .attr("height", squareSize)
+              .attr("fill", "rgb(197, 27, 138)")
+
+          d3.select("svg")
+            .selectAll("text")
+            .data(d3.range(12))
+            .enter()
+            .append("text")
+              .attr("x", 0)
+              .attr("y", function(d){ return y(d) + (squareSize/2) + 28 })
+              .attr("dy", ".25em")
+            
+            .text(function(d) {
+               return ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"][d]
+          })
+          
+          d3.select("svg")
+            .selectAll("text")
+            .data(d3.range(-12,31))
+            .enter()
+            .append("text")
+              .attr("x", function(d){return x(d) + (squareSize*1.5) + 5})
+              .attr("y", y(12) + squareSize*1.5)
+                .attr("dy", ".25em")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+              return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", 
+                      "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", 
+                      "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"][d]
+            })
+          
+        
+        });
+    
+    </script>
+  </body>
+</html>
